@@ -29,8 +29,9 @@ public class Move : MonoBehaviour
         {
             // 위쪽 방향키를 누르면 초당 (0, 1, 0) 의 속도로 평행이동
             transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime); // 지역공간 기준
-            // transform.position += new Vector3(0, 1, 0) * Time.deltaTime; // 전역공간 기준 
-            // transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime, Space.World); // 전역공간 기준
+            // transform.position += new Vector3(0, 1, 0) * Time.deltaTime; // 전역공간 기준 : 조금조금씩 누적해서 이동
+            // transform.position = new Vector3(0, 1, 0) * Time.deltaTime; // 전역공간 기준 : 순간이동에 가깝다
+            // transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime, UnityEngine.Space.World); // 전역공간 기준
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
